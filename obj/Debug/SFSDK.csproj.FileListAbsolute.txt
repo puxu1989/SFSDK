@@ -1,0 +1,10 @@
+D:\SVN\GYBOF\SERVER\SFSDK\bin\Debug\SFSDK.dll
+D:\SVN\GYBOF\SERVER\SFSDK\bin\Debug\SFSDK.pdb
+D:\SVN\GYBOF\SERVER\SFSDK\bin\Debug\Newtonsoft.Json.dll
+D:\SVN\GYBOF\SERVER\SFSDK\bin\Debug\Newtonsoft.Json.pdb
+D:\SVN\GYBOF\SERVER\SFSDK\bin\Debug\Newtonsoft.Json.xml
+D:\SVN\GYBOF\SERVER\SFSDK\obj\Debug\SFSDK.csprojAssemblyReference.cache
+D:\SVN\GYBOF\SERVER\SFSDK\obj\Debug\SFSDK.csproj.CoreCompileInputs.cache
+D:\SVN\GYBOF\SERVER\SFSDK\obj\Debug\SFSDK.csproj.CopyComplete
+D:\SVN\GYBOF\SERVER\SFSDK\obj\Debug\SFSDK.dll
+D:\SVN\GYBOF\SERVER\SFSDK\obj\Debug\SFSDK.pdb
