@@ -192,6 +192,11 @@ namespace SFSDK
             strBuilder.Append("</Request>");
             return strBuilder.ToString();
         }
+        /// <summary>
+        /// 加密方式 UTF8编码获取字符串的16位长度的二进制数据 再用此数据生成base64
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
         public static string MD5ToBase64String(string str)
         {
             MD5 md5 = new MD5CryptoServiceProvider();
