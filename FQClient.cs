@@ -136,7 +136,7 @@ namespace SFSDK
             string result = DoPost(requestUrl, xml, verifyCode);
             SFExpressResponse response = XMLSerializer.DeserializeXML<SFExpressResponse>(result);
             if(response==null)
-                throw new Exception("序列化出错："+ result);
+                throw new Exception("序列化解析XML出错："+ result);
             if (response.Head == "OK")
             {
                 if (response.Body == null || response.Body.RouteResponse == null)
