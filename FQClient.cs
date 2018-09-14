@@ -212,7 +212,9 @@ namespace SFSDK
         {
             ServicePointManager.ServerCertificateValidationCallback = new System.Net.Security.RemoteCertificateValidationCallback(CheckValidationResult);
             string postData = string.Format("xml={0}&verifyCode={1}", xml, verifyCode); //请求 
-            WebRequest request = (HttpWebRequest)WebRequest.Create(Url); request.Method = "POST"; request.ContentType = "application/x-www-form-urlencoded;charset=utf-8";
+            WebRequest request = (HttpWebRequest)WebRequest.Create(Url);
+            request.Method = "POST";
+            request.ContentType = "application/x-www-form-urlencoded;charset=utf-8";
             request.ContentLength = Encoding.UTF8.GetByteCount(postData);
             byte[] postByte = Encoding.UTF8.GetBytes(postData);
             Stream reqStream = request.GetRequestStream();
