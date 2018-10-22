@@ -16,7 +16,7 @@ namespace SFSDK
         /// </summary>
         public string SFOrderId { get; set; }
         /// <summary>
-        /// 顺丰运单号
+        /// 顺丰运单号 如果是子母单用逗号分隔 
         /// </summary>
         public string SFMailNo { get; set; }
         /// <summary>
@@ -47,6 +47,10 @@ namespace SFSDK
         /// 收件人省
         /// </summary>
         public string ResvProvince { get; set; }
+        /// <summary>
+        /// 包裹数量 不为1则返回子母单
+        /// </summary>
+        public int ParcelQuantity { get; set; } = 1;
         /// <summary>
         /// 收件人城市
         /// </summary>
@@ -89,6 +93,10 @@ namespace SFSDK
         /// </summary>
         public string ShopName { get; set; }
         /// <summary>
+        /// 包装费用
+        /// </summary>
+        public string PackingCharges { get; set; }
+        /// <summary>
         /// 其他备注
         /// </summary>
         public string Description { get; set; }
@@ -105,5 +113,21 @@ namespace SFSDK
         /// 商品描述
         /// </summary>
         public string GoodsDescription { get; set; }
+        /// <summary>
+        /// 用户备注留言等
+        /// </summary>
+        public string LeaveWord { get; set; }
+        /// <summary>
+        /// 保价 1块保500内 2块1000内 以上看实际情况
+        /// </summary>
+        public string Insure { get; set; }
+        /// <summary>
+        /// 代收货款
+        /// </summary>
+        public string COD { get; set; }
+        /// <summary>
+        /// 代收货款 卡号
+        /// </summary>
+        public string COD_CardNO { get; set; }
     }
 }

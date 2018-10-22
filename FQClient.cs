@@ -39,7 +39,7 @@ namespace SFSDK
             }
             else
             {
-                throw new Exception(response.ERROR.text);
+                throw new Exception(response.ERROR.text?? response.ERROR.code);
             }
         }
         /// <summary>
@@ -174,6 +174,7 @@ namespace SFSDK
             strBuilder.Append("d_contact='" + entity.ResvRealName + "'").Append(" ");
             strBuilder.Append("d_tel='" + entity.ResvTel + "'").Append(" ");
             strBuilder.Append("d_address='" + entity.ResvAddress + "'").Append(" ");
+            strBuilder.Append("parcel_quantity='" + entity.ParcelQuantity + "'").Append(" ");//包裹数量为不为1则返回子母单
             strBuilder.Append("pay_method='" + entity.PayMethod + "'").Append(" ");
             if (entity.PayMethod == 1)
             {           
@@ -186,7 +187,22 @@ namespace SFSDK
             strBuilder.Append("count='" + entity.GoodsNum + "'").Append(" ");
             strBuilder.Append("unit='个'").Append(">");
             strBuilder.Append("</Cargo>");
-
+            //其他服务信息 具体代码看  4.2.6. 增值服务下单属性说明  
+            if (!string.IsNullOrEmpty(entity.COD))
+            {
+                strBuilder.Append("<AddedService").Append(" ");
+                strBuilder.Append("name='COD'").Append(" ");//代收货款
+                strBuilder.Append("value='" + entity.COD + "'").Append(" ");//代收价格
+                strBuilder.Append("value1='" + entity.SFYueJieCode + "'").Append(">");//代收卡号
+                strBuilder.Append("</AddedService>");
+            }
+            if (!string.IsNullOrEmpty(entity.Insure))//此值不为空就说明保价了
+            {
+                strBuilder.Append("<AddedService").Append(" ");
+                strBuilder.Append("name='INSURE'").Append(" ");//保价服务
+                strBuilder.Append("value='" + entity.Insure + "'").Append(">");//保值
+                strBuilder.Append("</AddedService>");
+            }
             strBuilder.Append("</Order>");
             strBuilder.Append("</Body>");
             strBuilder.Append("</Request>");
